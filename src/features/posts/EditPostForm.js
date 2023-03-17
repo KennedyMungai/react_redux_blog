@@ -19,6 +19,13 @@ const EditPostForm = () =>
     const [requestStatus, setRequestStatus] = useState(post?.userId)
 
     const dispatch = useDispatch()
+
+    if (!post)
+    {
+        return (
+            <section>Post Not Found!</section>
+        )
+    }
 }
 
 export default EditPostForm
