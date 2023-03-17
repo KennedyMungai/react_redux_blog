@@ -10,6 +10,15 @@ const SinglePostPage = () =>
 {
     const post = useSelector((state) => selectPostById(state, postId))
 
+    if (!post)
+    {
+        return (
+            <section>
+                <h2> Post Not Found</h2>
+            </section>
+        )
+    }
+
     return (
         <div>SinglePostPage</div>
     )
