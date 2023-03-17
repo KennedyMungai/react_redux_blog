@@ -30,6 +30,8 @@ const EditPostForm = () =>
     const onContentChanged = e => setTitle(e.target.value)
     const onTitleChanged = e => setTitle(e.target.value)
     const onAuthorChanged = e => setTitle(e.target.value)
+
+    const canSave = [title, content, userId].every(Boolean) && requestStatus === 'idle'
 }
 
 export default EditPostForm
