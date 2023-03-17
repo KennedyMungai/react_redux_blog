@@ -67,6 +67,28 @@ const EditPostForm = () =>
             {user.name}
         </option>
     })
+
+    const onDeletePostClicked = () => 
+    {
+        try
+        {
+            setRequestStatus('pending')
+            dispatch(deletePost({ id: post.id })).unwrap()
+
+            setTitle('')
+            setContent('')
+            setUserId('')
+            navigate('/')
+        }
+        catch (error)
+        {
+            console.error('Failed to delete the post', error)
+        }
+        finally
+        {
+            setRequestStatus('idle')
+        }
+    }
 }
 
 export default EditPostForm
