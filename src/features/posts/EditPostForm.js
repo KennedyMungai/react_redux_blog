@@ -40,7 +40,7 @@ const EditPostForm = () =>
             try
             {
                 setRequestStatus('pending')
-                dispatch(updatePost({id: post.id,body: content,userId,reactions: post.reactions})).unwrap()
+                dispatch(updatePost({ id: post.id, body: content, userId, reactions: post.reactions })).unwrap()
 
                 setTitle('')
                 setContent('')
@@ -57,6 +57,16 @@ const EditPostForm = () =>
             }
         }
     }
+
+    const userOptions = users.map((user) => 
+    {
+        <option
+            key={user.id}
+            value={user.id}
+        >
+            {user.name}
+        </option>
+    })
 }
 
 export default EditPostForm
