@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate, useParams } from 'react-router-dom'
 import { selectAllUsers } from '../users/usersSlice'
-import { selectPostById, updatePost } from './postsSlice'
+import { selectPostById, updatePost, deletePost } from './postsSlice'
 
 
 const EditPostForm = () =>
