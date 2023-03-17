@@ -3,6 +3,7 @@ import AddPostForm from "./features/posts/AddPostForm";
 import SinglePostPage from "./features/posts/SinglePostPage";
 import Layout from "./components/Layout";
 import { Route, Routes } from "react-router-dom";
+import EditPostForm from "./features/posts/EditPostForm";
 
 function App()
 {
