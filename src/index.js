@@ -13,7 +13,11 @@ store.dispatch(fetchUsers());
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <App />
+      <Router>
+        <Routes>
+          <Route path='/' element={<App />} />
+        </Routes>
+      </Router>
     </Provider>
   </React.StrictMode>,
   document.getElementById('root')
