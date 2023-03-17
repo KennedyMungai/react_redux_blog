@@ -5,6 +5,8 @@ import { selectPostById } from './postsSlice'
 
 const SinglePostPage = () =>
 {
+    const post = useSelector(selectPostById)
+
     return (
         <div>SinglePostPage</div>
     )
