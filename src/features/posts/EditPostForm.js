@@ -32,6 +32,31 @@ const EditPostForm = () =>
     const onAuthorChanged = e => setTitle(e.target.value)
 
     const canSave = [title, content, userId].every(Boolean) && requestStatus === 'idle'
+
+    const onSavePostClicked = () => 
+    {
+        if (canSave)
+        {
+            try
+            {
+                setRequestStatus('pending')
+                dispatch(updatePost({id: post.id,body: content,userId,reactions: post.reactions})).unwrap()
+
+                setTitle('')
+                setContent('')
+                setUserId('')
+                navigate(`post/{postId}`)
+            }
+            catch (error)
+            {
+                console.error("Failed to save the post", error)
+            }
+            finally
+            {
+                setRequestStatus('idle')
+            }
+        }
+    }
 }
 
 export default EditPostForm
