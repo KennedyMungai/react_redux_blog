@@ -10,6 +10,7 @@ import { fetchPosts } from './features/posts/postsSlice';
 
 
 store.dispatch(fetchUsers());
+store.dispatch(fetchPosts())
 
 ReactDOM.render(
   <React.StrictMode>
