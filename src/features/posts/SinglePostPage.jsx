@@ -9,6 +9,8 @@ import TimeAgo from './TimeAgo'
 
 const SinglePostPage = () =>
 {
+    const params = useParams()
+
     const post = useSelector((state) => selectPostById(state, postId))
 
     if (!post)
