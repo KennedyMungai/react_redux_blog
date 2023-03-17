@@ -8,7 +8,7 @@ import TimeAgo from './TimeAgo'
 
 const SinglePostPage = () =>
 {
-    const post = useSelector(selectPostById)
+    const post = useSelector((state) => selectPostById(state, postId))
 
     return (
         <div>SinglePostPage</div>
