@@ -7,9 +7,16 @@ import { selectPostById } from './postsSlice'
 
 const EditPostForm = () =>
 {
-    return (
-        <div>EditPostForm</div>
-    )
+    const { postId } = useParams()
+    const navigate = useNavigate()
+
+    const post = useSelector((state) => selectPostById(state, Number(postId)))
+    const users = useSelector(selectAllUsers)
+
+    const [title, setTitle] = useState(post?.title)
+    const [content, setContent] = useState(post?.body)
+    const [userId, setUserId] = useState(post?.userId)
+    const [requestStatus, setRequestStatus] = useState(post?.userId)
 }
 
 export default EditPostForm
