@@ -17,6 +17,8 @@ const EditPostForm = () =>
     const [content, setContent] = useState(post?.body)
     const [userId, setUserId] = useState(post?.userId)
     const [requestStatus, setRequestStatus] = useState(post?.userId)
+
+    const dispatch = useDispatch()
 }
 
 export default EditPostForm
