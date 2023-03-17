@@ -30,11 +30,32 @@ export const updatePost = createAsyncThunk(`posts/updatePost`, async (initialPos
     {
         const response = await axios.put(`${POSTS_URL}/${id}`, initialPost)
         return response.data
-     }
-     catch(error)
-     {
+    }
+    catch(error)
+    {
+    return error.message
+    }
+})
+
+export const deletePost = createAsyncThunk('posts/deletePost', async(initialPost) => 
+{
+    const {id} = initialPost
+
+    try
+    {
+        const response = await axios.delete(`${POSTS_URL}/${id}`)
+
+        if(response?.status == 200)
+        {
+            return initialPost
+        }
+
+        return `${response?.status}: ${response?.statusText}`
+    }
+    catch(error)
+    {
         return error.message
-     }
+    }
 })
 
 const postsSlice = createSlice({
