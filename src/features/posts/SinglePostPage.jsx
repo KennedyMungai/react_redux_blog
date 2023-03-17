@@ -1,6 +1,6 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
 import { selectPostById } from './postsSlice'
-
 
 
 const SinglePostPage = () =>
