@@ -26,6 +26,10 @@ const EditPostForm = () =>
             <section>Post Not Found!</section>
         )
     }
+
+    const onContentChanged = e => setTitle(e.target.value)
+    const onTitleChanged = e => setTitle(e.target.value)
+    const onAuthorChanged = e => setTitle(e.target.value)
 }
 
 export default EditPostForm
